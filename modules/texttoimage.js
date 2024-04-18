@@ -3,7 +3,7 @@ const { handleResizeImage } = require("../../../../Productie/TextToImage/js/hand
 
 
 async function consumeTextToImage  (req, res)  {
- //console.log('consumeTextToImage');
+  
  
   let file      = req.query.file;
   let kenteken  = req.query.kenteken;
@@ -11,7 +11,11 @@ async function consumeTextToImage  (req, res)  {
   let naw1      = req.query.naw1;
   let naw2      = req.query.naw2;
   let naw3      = req.query.naw3;
-   
+ 
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeTextToImage file: ' +file + ' kenteken: ' + kenteken  + ' datum tijd: ' +datumtijd  + 'naw 1: ' + naw1 +' naw 2: ' + naw2 + ' naw 3: ' +naw3 );
+  
    
   var resolve =  await handleTextToImageNow(file, kenteken, datumtijd, naw1, naw2, naw3);
   
@@ -24,7 +28,11 @@ async function consumeResizeImage  (req, res)  {
  
   let file      = req.query.file;
   let maxsize   = req.query.maxsize;
-   
+  
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeResizeImaage file: ' +file + ' maxSize: ' + maxsize );
+  
    
   var resolve =  await handleResizeImage(file, maxsize);
   

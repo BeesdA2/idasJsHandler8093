@@ -2,7 +2,7 @@ const { molliePayments } = require("../../../Mollie/js/createPayment.js");
 var express = require('express');
 
 async function getMollie (req, res) {
- console.log('Get Mollie');
+  
   var setletter = '';
   var filiaal='';
   var ordernr  = '';
@@ -21,7 +21,10 @@ async function getMollie (req, res) {
    ordernr   = req.query.ordernr;
   }
   
-  
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' getMollie setletter: ' +setletter + ' filiaal: ' + filiaal + ' ordernummer: '+ordernr  + ' logging: ' +logging );
+ 
   
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);
   var resolve = await molliePayments(setletter, filiaal, ordernr);
