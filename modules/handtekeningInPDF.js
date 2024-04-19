@@ -14,7 +14,7 @@ async function consumeHandtekeningInPDF  (req, res)  {
   
  var d = new Date();
  var datetime = d.toLocaleString(); 	
- console.log(datetime + ' consumeHandtekeningInPDF origineelDocument: ' +origineelDocumentsetletter + ' handTekening: ' + handTekening + ' xxText: ' +xxText + ' yyText: ' + yyText );
+ console.log(datetime + ' consumeHandtekeningInPDF origineelDocument: ' +origineelDocument + ' handTekening: ' + handTekening + ' xxText: ' +xxText + ' yyText: ' + yyText );
  
    
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);
